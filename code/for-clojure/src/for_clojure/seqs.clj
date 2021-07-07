@@ -73,3 +73,49 @@
 
 ;; map-indexed takes a function which should take two arguments index and item
 (map-indexed #(vector %2 %1) [:a :b :c])
+
+;; 147 Pascal's Trapezoid
+(second
+ (
+    #(iterate (fn [coll]
+                 (conj
+                    (vec (cons (first coll)
+                               (map +' (rest coll) (drop-last coll))))
+                    (last coll))) %)
+    [2 3 2]))
+
+(defn pascal [coll]
+   (conj
+      (vec (cons (first coll)
+                 (map + (rest coll) (drop-last coll))))
+      (last coll)))
+
+(pascal [2 3 2])
+
+(second
+   (
+      #(iterate (fn [coll]
+                   (map +' (concat [0] coll)
+                          (concat coll [0]))) %)
+      [2 3 2]))
+
+
+;; 44 Rotate Sequence
+;; Note that `mod` returns the remainder,
+;; it is slightly different from `rem`
+(
+ (fn [x coll]
+    (let [n (mod x (count coll))]
+       (concat (drop n coll) (take n coll))))
+ 2 [1 2 3 4 5])
+
+;; we can also achieve it with `cycle`
+
+;; 43 Reverse Interleave
+;; note thtat take-nth can never take every 0th!
+(
+ (fn [coll n]
+    (for [i (range n)] (take-nth n (drop i coll))))
+ [1 2 3 4 5 6] 2)
+
+(take-nth 0 (drop 0 [1 2 3 4 5 6]))
