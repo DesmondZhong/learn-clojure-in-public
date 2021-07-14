@@ -119,3 +119,32 @@
  [1 2 3 4 5 6] 2)
 
 (take-nth 0 (drop 0 [1 2 3 4 5 6]))
+
+;; 50 Split by Type
+(vals (group-by type [1 :a 2 :b 3 :c]))
+
+((comp vals (partial group-by type)) [1 :a :b 2 3 :c])
+
+;; 110 Sequence of pronunciations
+(take 3
+      (rest
+       (iterate
+         (fn [x]
+           (apply concat (map #(vector (count %) (first %)) (partition-by identity x))))
+         [1]))
+      )
+
+;; 93 partially flatten a sequence
+;; tree seq internally do a recursion
+(defn pflatten [tree]
+  (if (every? sequential? tree)
+    (mapcat pflatten tree)
+    [tree]))
+(pflatten '((1 2)((3 4)((((5 6)))))))
+
+;; 28 flatten a sequence
+(tree-seq sequential? seq ["a" ["b"] "c"])
+(filter (complement sequential?) (tree-seq sequential? seq ["a" ["b"] "c"]))
+(tree-seq seq? identity '((1 2 (3)) (4)))
+
+;; 112 Sequs Horribilis
