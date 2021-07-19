@@ -37,6 +37,9 @@
   [f coll]
   (apply merge-with into  (for [v coll] {(f v) [v]})))
 
+;; merge-with merges maps
+
+
 ;; we can also use update-in
 ;; notice how the special case of no value associated with the key is
 ;; handled by (or ...)

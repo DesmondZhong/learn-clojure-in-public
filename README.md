@@ -1,7 +1,7 @@
 # Learning Clojure in Public
 
 <p align="center">
-    <img src="https://img.shields.io/badge/4Clojure-53/156-blue?logo=clojure&style=flat" />
+    <img src="https://img.shields.io/badge/4Clojure-57/156-blue?logo=clojure&style=flat" />
     <img src="https://img.shields.io/badge/Clojure%20from%20the%20Ground%20Up-7/10-green?logo=clojure&style=flat" />
     <img src="https://img.shields.io/badge/Clojure%20for%20the%20Brave%20and%20True-5/13-red?logo=clojure&style=flat" />
     <img src="https://img.shields.io/badge/Commits%20to%20Athens-0/3-red?logo=clojure&style=flat" />
@@ -20,7 +20,7 @@ re-frame:
 - [ ] [Blue Genes](https://github.com/intermine/bluegenes)
 
 Datascript:
-- [ ] (6/9) [http://www.learndatalogtoday.org/](http://www.learndatalogtoday.org/)
+- [x] [http://www.learndatalogtoday.org/](http://www.learndatalogtoday.org/)
 - [ ] [https://github.com/markbastian/datascript-playground/](https://github.com/markbastian/datascript-playground/)
 - [ ] [https://docs.datomic.com/on-prem/pull.html](https://docs.datomic.com/on-prem/pull.html)
 - [ ] [https://docs.datomic.com/on-prem/query.html](https://docs.datomic.com/on-prem/query.html)
